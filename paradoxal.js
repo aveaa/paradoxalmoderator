@@ -22,6 +22,7 @@ const ms      = require('ms');
 
 // Клиент
 const client  = new Discord.Client();
+var botstatus = "Moderator"
 
 // Конфиг 🔨
 let p = '.';
@@ -38,7 +39,14 @@ client.login(process.env.TOKEN);
 
 // Ивент при запуске бота 👤
 client.on('ready', () => {
-    console.log('Бот успешно запущен!');
+    console.log('✔ Бот успешно запущен');
+    console.log(' ');
+    console.log('Информация о боте:');
+    console.log('Авторизация: ' + client.user.tag);
+    console.log('Статус: ' + botstatus);
+    console.log(' ');
+    console.log('Бот написан специально для сервера "Paradoxal"');
+    console.log(' ');
     client.user.setActivity("чатом", {type: 3});
     });
 
