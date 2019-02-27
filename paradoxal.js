@@ -153,4 +153,15 @@ const muteEmbed = new Discord.RichEmbed()
 .setColor(c)
 message.channel.send(muteEmbed);
     }
+if (message.content.startsWith(p + 'help')) {
+    const embed = new Discord.RichEmbed()
+    .setAuthor(message.member.avatarUrl, "Помощь по запросу " + message.author.tag)
+    .addField("Эмоции", "``.обнять``, ``.ударить``, ``.поцеловать``, ``.погладить``, ``.тыкнуть``, ``.щекотать``, ``.покормить``")
+    .addField("Другое", "``.аватар``")
+    .addField("18+", "``.порнгиф``, ``.хентай``, ``.пусси``, ``.грудь``, ``.трап``, ``.анал``, ``.эротика``")
+    .addField("Модерация", "``.mute``, ``.unmute``")
+    .setColor(c)
+    .setThumbnail("https://img.icons8.com/nolan/96/000000/help.png")
+    message.channel.send(embed);
+    }
         });
