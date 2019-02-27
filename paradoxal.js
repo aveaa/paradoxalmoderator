@@ -109,16 +109,30 @@ const msgauthor = new Discord.RichEmbed()
     
 // Отправление эмбеда
   const muteEmbed = new Discord.RichEmbed()
-  .addField("Нарушитель", `${tomute}`)
+  .addField("Нарушитель:", `${tomute}`)
   .addField("Модератор:", `${message.author}`)
   .addField("Заглушен на:", `${ms(ms(mutetime))}`)
   .addField("Причина:", `${erer}`)
   .setColor(c)
-  message.channel.send(muteEmbed);
+  message.channel.send(`${client.emojis.get(emojis.yes)} Участник был успешно заглушен`, muteEmbed);
+    
+   const muteEmbed2 = new Discord.RichEmbed()
+   .addField("Нарушитель:", `${tomute}`)
+   .addField("Модератор:", `${message.author}`)
+   .addField("Заглушен на:", `${ms(ms(mutetime))}`)
+   .addField("Причина:", `${erer}`)
+   tomute.send("Вы были замучены на сервере Paradoxal", muteEmbed2)
 
 // Удаление роли у пользователя
   setTimeout(function(){
     tomute.removeRole(muterole.id);
+    
+   const unmuteEmbed2 = new Discord.RichEmbed()
+   .addField("Нарушитель:", `${tomute}`)
+   .addField("Модератор:", `${message.author}`)
+   .addField("Был заглушен на:", `${ms(ms(mutetime))}`)
+   .addField("Причина:", `${erer}`)
+   tomute.send("Вы были размучены на сервере Paradoxal", unmuteEmbed2)
   }, ms(mutetime));
 
 }
@@ -158,11 +172,18 @@ const msgauthor = new Discord.RichEmbed()
 // Удаление роли
     await tomute.removeRole(muterole.id)
     
+   const unmuteEmbed2 = new Discord.RichEmbed()
+   .addField("Нарушитель:", `${tomute}`)
+   .addField("Модератор:", `${message.author}`)
+   .addField("Был заглушен на:", `${ms(ms(mutetime))}`)
+   .addField("Причина:", `${erer}`)
+   tomute.send("Вы были размучены на сервере Paradoxal", unmuteEmbed2)
+    
 // Отправление эмбеда
-const muteEmbed = new Discord.RichEmbed()
-.addField("Нарушитель", `${tomute}`)
+const unmuteEmbed = new Discord.RichEmbed()
+.addField("Нарушитель:", `${tomute}`)
 .addField("Модератор:", `${message.author}`)
 .setColor(c)
-message.channel.send(muteEmbed);
+message.channel.send(`${client.emojis.get(emojis.yes)} Участник был успешно разглушен`, unmuteEmbed);
     }
         });
