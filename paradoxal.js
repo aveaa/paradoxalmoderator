@@ -64,4 +64,56 @@ client.on('guildMemberAdd',(member) => member.guild.channels.get('54859936286795
 client.on('message', async message => {
         const args = message.content.slice(p.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
+if (message.content.startsWith(p + 'mute')) {
+// Эмбеды ошибок
+const notomute = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Данный пользователь не является участником данного сервера.`)
+.setColor(c)
+
+const noperm = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Вы не являетесь модератором данного сервера.`)
+.setColor(c)
+
+const nomutetime = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Вы не указали время мута.`)
+.setColor(c)
+
+const noerer = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Вы не указали причину мута`)
+.setColor(c)
+
+// Переменные
+  let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
+  let muterole = message.guild.roles.find(`name`, "💀 › Muted");
+  let mutetime = args[1];
+  let erer = args.slice(2).join(' ');;
+
+// Ошибки
+  if (!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
+  if(!tomute) return message.channel.send(notomute);
+  if(!mutetime) return message.channel.send(nomutetime);
+  if(!erer) return message.channel.send(noerer);
+
+// Выдача роли
+  await tomute.addRole(muterole.id);
+    
+// Отправление эмбеда
+  const muteEmbed = new Discord.RichEmbed()
+  .addField("Нарушитель", `${tomute}`)
+  .addField("Модератор:", `${message.author}`)
+  .addField("Заглушен на:", `${ms(ms(mutetime))}`)
+  .addField("Причина:", `${erer}`)
+  .setColor(c)
+  message.channel.send(muteEmbed);
+
+// Удаление роли у пользователя
+  setTimeout(function(){
+    tomute.removeRole(muterole.id);
+  }, ms(mutetime));
+
+}
         });
