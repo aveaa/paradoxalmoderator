@@ -41,7 +41,7 @@ client.login(process.env.TOKEN);
 client.on('ready', () => {
     console.log('//--------------------//');
     console.log(' ');
-    console.log('✔ Бот успешно запущен');
+    console.log('Бот успешно запущен');
     console.log(' ');
     console.log('Информация о боте:');
     console.log('Авторизация: ' + client.user.tag);
