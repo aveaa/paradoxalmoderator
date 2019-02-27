@@ -36,6 +36,12 @@ const emojis = {
 // Авторизация
 client.login(process.env.TOKEN);
 
+// Ивент при запуске бота 👤
+client.on('ready', () => {
+    console.log('Бот успешно запущен!');
+    client.user.setActivity("чатом", {type: 3});
+    });
+
 // Основной код
 client.on('message', async message => {
         const args = message.content.slice(p.length).trim().split(/ +/g);
