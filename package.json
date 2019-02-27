@@ -1,0 +1,16 @@
+{
+  "name": "ParadoxalBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "paradoxal.js",
+  "dependencies": {
+    "ms": "^2.1.1",
+    "discord.js": "^11.3.2",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node paradoxal.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
