@@ -57,6 +57,13 @@ client.on('ready', () => {
 client.on('message', async message => {
         const args = message.content.slice(p.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
+if (message.content.startsWith(p + 'help')) {
+   const embed = new Discord.RichEmbed()
+   .addField("Модерация", "``.mute``, ``.unmute``");
+   .setColor(c);
+   .setThumbnail("https://img.icons8.com/nolan/96/000000/help.png");
+    setInterval(message.channel.send(embed), 1000)
+         }
 if (message.content.startsWith(p + 'mute')) {
 // Эмбеды ошибок
 const notomute = new Discord.RichEmbed()
