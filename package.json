@@ -1,11 +1,12 @@
 {
-  "name": "ParadoxalBot",
+  "name": "paradoxal",
   "version": "1.0.0",
   "description": "",
   "main": "paradoxal.js",
   "dependencies": {
     "ms": "^2.1.1",
     "discord.js": "^11.3.2",
+    "foreach-timeout": "^2.0.2"
   },
   "devDependencies": {},
   "scripts": {
