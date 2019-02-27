@@ -86,6 +86,11 @@ const noerer = new Discord.RichEmbed()
 .setDescription(`${client.emojis.get(emojis.no)} Вы не указали причину мута`)
 .setColor(c)
 
+const msgauthor = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Вы не можете замутить самого себя`)
+.setColor(c)
+
 // Переменные
   let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
   let muterole = message.guild.roles.find(`name`, "💀 › Muted");
@@ -93,7 +98,8 @@ const noerer = new Discord.RichEmbed()
   let erer = args.slice(2).join(' ');;
 
 // Ошибки
-  if (!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
+  if(!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
+  if(tomute = message.author) return message.channel.send(msgauthor);
   if(!tomute) return message.channel.send(notomute);
   if(!mutetime) return message.channel.send(nomutetime);
   if(!erer) return message.channel.send(noerer);
@@ -134,12 +140,18 @@ const tomutenomute = new Discord.RichEmbed()
 .setDescription(`${client.emojis.get(emojis.no)} Данный пользователь не является нарушителем`)
 .setColor(c)
 
+const msgauthor = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Вы не можете размутить самого себя`)
+.setColor(c)
+
 // Переменные
   let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
   let muterole = message.guild.roles.find(`name`, "💀 › Muted");
     
 // Ошибки
-  if (!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
+  if(!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
+  if(tomute = message.author) return message.channel.send(msgauthor);
   if(!tomute) return message.channel.send(notomute);
   if(!tomute.roles.has("546266965434564619")) return message.channel.send(tomutenomute);
     
