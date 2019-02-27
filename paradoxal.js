@@ -116,4 +116,41 @@ const noerer = new Discord.RichEmbed()
   }, ms(mutetime));
 
 }
+
+if (message.content.startsWith(p + 'unmute')) {
+// Эмбеды ошибок
+const noperm = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Вы не являетесь модератором данного сервера.`)
+.setColor(c)
+
+const notomute = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Данный пользователь не является участником данного сервера.`)
+.setColor(c)
+    
+const tomutenomute = new Discord.RichEmbed()
+.setTitle("Ошибка")
+.setDescription(`${client.emojis.get(emojis.no)} Данный пользователь не является нарушителем`)
+.setColor(c)
+
+// Переменные
+  let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
+  let muterole = message.guild.roles.find(`name`, "💀 › Muted");
+    
+// Ошибки
+  if (!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
+  if(!tomute) return message.channel.send(notomute);
+  if(!tomute.roles.has("546266965434564619")) return message.channel.send(tomutenomute);
+    
+// Удаление роли
+    await tomute.removeRole(muterole.id)
+    
+// Отправление эмбеда
+const muteEmbed = new Discord.RichEmbed()
+.addField("Нарушитель", `${tomute}`)
+.addField("Модератор:", `${message.author}`)
+.setColor(c)
+message.channel.send(muteEmbed);
+    }
         });
