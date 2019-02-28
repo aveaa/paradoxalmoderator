@@ -100,9 +100,9 @@ const msgauthor = new Discord.RichEmbed()
 // Ошибки
   if(!message.member.roles.has("544160425286172679")) return message.channel.send(noperm);
   if(!tomute) return message.channel.send(notomute);
-  if(tomute = message.author) return message.channel.send(msgauthor);
   if(!mutetime) return message.channel.send(nomutetime);
   if(!erer) return message.channel.send(noerer);
+  if(tomute = message.author) return message.channel.send(msgauthor);
 
 // Выдача роли
   await tomute.addRole(muterole.id);
