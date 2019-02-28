@@ -102,7 +102,7 @@ const msgauthor = new Discord.RichEmbed()
   if(!tomute) return message.channel.send(notomute);
   if(!mutetime) return message.channel.send(nomutetime);
   if(!erer) return message.channel.send(noerer);
-  if(tomute = message.author) return message.channel.send(msgauthor);
+  if(message.author = tomute) return message.channel.send(msgauthor);
 
 // Выдача роли
   await tomute.addRole(muterole.id);
