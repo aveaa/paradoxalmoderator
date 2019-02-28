@@ -120,7 +120,8 @@ const msgauthor = new Discord.RichEmbed()
    .addField("Модератор:", `${message.author}`)
    .addField("Заглушен на:", `${ms(ms(mutetime))}`)
    .addField("Причина:", `${erer}`)
-   tomute.send("Вы были замучены на сервере Paradoxal", muteEmbed2)
+   .setColor(c)
+   tomute.send(client.emojis.get(emojis.yes) + " Вы были замучены на сервере Paradoxal", muteEmbed2)
 
 // Удаление роли у пользователя
   setTimeout(function(){
@@ -128,9 +129,9 @@ const msgauthor = new Discord.RichEmbed()
     
    const unmuteEmbed2 = new Discord.RichEmbed()
    .addField("Нарушитель:", `${tomute}`)
-   .addField("Модератор:", `${message.author}`)
    .addField("Был заглушен на:", `${ms(ms(mutetime))}`)
    .addField("Причина:", `${erer}`)
+   .setColor(c)
    tomute.send("Вы были размучены на сервере Paradoxal", unmuteEmbed2)
   }, ms(mutetime));
 
@@ -176,7 +177,8 @@ const msgauthor = new Discord.RichEmbed()
    .addField("Модератор:", `${message.author}`)
    .addField("Был заглушен на:", `${ms(ms(mutetime))}`)
    .addField("Причина:", `${erer}`)
-   tomute.send("Вы были размучены на сервере Paradoxal", unmuteEmbed2)
+   .setColor(c)
+   tomute.send(client.emojis.get(emojis.yes) + " Вы были размучены на сервере Paradoxal", unmuteEmbed2)
     
 // Отправление эмбеда
 const unmuteEmbed = new Discord.RichEmbed()
