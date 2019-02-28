@@ -55,7 +55,7 @@ client.on('ready', () => {
 
 // Основной код
 client.on('message', async message => {        
-        const args = message.content.slice(p.length).trim().split(" ");
+        const args = message.content.slice(p).trim().split(" ");
         const command = args.shift().toLowerCase();
 if (command == "help" || command == "помощь") {
    const embed = new Discord.RichEmbed()
