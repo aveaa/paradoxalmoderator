@@ -55,16 +55,16 @@ client.on('ready', () => {
 
 // Основной код
 client.on('message', async message => {
-        const args = message.content.slice(p.length).trim().split(/ +/g);
-        const command = args.shift().toLowerCase();
-if (message.content.startsWith(p + 'help')) {
+        const args = message.content.slice(p.length).trim().split(" ");
+        const command = args.shift().toUpperCase();
+if (command == "help" || command == "помощь") {
    const embed = new Discord.RichEmbed()
    .addField("Модерация", "``.mute``, ``.unmute``")
    .setColor(c)
    .setThumbnail("https://img.icons8.com/nolan/96/000000/help.png")
     setTimeout(message.channel.send(embed), 1000)
          }
-if (message.content.startsWith(p + 'mute')) {
+if (command == "mute" || command == "мут") {
 // Эмбеды ошибок
 const notomute = new Discord.RichEmbed()
 .setTitle("Ошибка")
@@ -102,7 +102,6 @@ const msgauthor = new Discord.RichEmbed()
   if(!tomute) return message.channel.send(notomute);
   if(!mutetime) return message.channel.send(nomutetime);
   if(!erer) return message.channel.send(noerer);
-  if(message.author = tomute) return message.channel.send(msgauthor);
 
 // Выдача роли
   await tomute.addRole(muterole.id);
@@ -137,7 +136,7 @@ const msgauthor = new Discord.RichEmbed()
 
 }
 
-if (message.content.startsWith(p + 'unmute')) {
+if (command == "unmute" || command == "размут") {
 // Эмбеды ошибок
 const noperm = new Discord.RichEmbed()
 .setTitle("Ошибка")
