@@ -26,7 +26,7 @@ var botstatus = "Moderator"
 
 // Конфиг 🔨
 let p = '\.';
-let c = "#a142f4";
+let c = "#fa6402";
 
 // Глобальные эмодзи 😂
 const emojis = {
