@@ -25,7 +25,7 @@ const client  = new Discord.Client();
 var botstatus = "Moderator"
 
 // Конфиг 🔨
-let p = '.';
+let p = '\.';
 let c = "#fa6402";
 
 // Глобальные эмодзи 😂
@@ -57,12 +57,12 @@ client.on('ready', () => {
 client.on('message', async message => {        
         const args = message.content.slice(p.length).trim().split(" ");
         const command = args.shift().toLowerCase();
-if (command == "help" || command == "помощь") {
+if (command == `${p}help` || command == `${p}помощь`) {
    const embed = new Discord.RichEmbed()
    .addField("Модерация", "``.mute``, ``.unmute``")
    .setColor(c)
    .setThumbnail("https://img.icons8.com/nolan/96/000000/help.png")
-    setTimeout(message.channel.send(embed), 1000)
+    setTimeout(message.channel.send(embed), 1500)
          }
 if (command == `${p}mute` || command == `${p}мут`) {
 // Эмбеды ошибок
