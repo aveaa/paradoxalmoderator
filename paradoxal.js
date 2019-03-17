@@ -25,7 +25,7 @@ const client  = new Discord.Client();
 var botstatus = "Moderator"
 
 // Конфиг 🔨
-let p = '\.';
+let p = '-';
 let c = "#fa6402";
 
 // Глобальные эмодзи 😂
@@ -50,7 +50,7 @@ client.on('ready', () => {
     console.log('Бот написан специально для сервера "Paradoxal"');
     console.log(' ');
     console.log('//--------------------//');
-    client.user.setActivity("за чатом", {type: 3});
+    client.user.setActivity("-help", {type: 3});
     });
 
 // Основной код
