@@ -25,7 +25,7 @@ const client  = new Discord.Client();
 var botstatus = "Moderator"
 
 // Конфиг 🔨
-let p = '\.';
+let p = '.';
 let c = "#fa6402";
 
 // Глобальные эмодзи 😂
