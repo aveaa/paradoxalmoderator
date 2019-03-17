@@ -50,7 +50,7 @@ client.on('ready', () => {
     console.log('Бот написан специально для сервера "Paradoxal"');
     console.log(' ');
     console.log('//--------------------//');
-    client.user.setActivity("-help", {type: 3});
+    client.user.setActivity(".help", {type: 3});
     });
 
 // Основной код
