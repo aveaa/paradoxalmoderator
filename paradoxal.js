@@ -64,7 +64,7 @@ if (command == "help" || command == "помощь") {
    .setThumbnail("https://img.icons8.com/nolan/96/000000/help.png")
     setTimeout(message.channel.send(embed), 1000)
          }
-if (command == "mute" || command == "мут") {
+if (command == `${p}mute` || command == `${p}мут`) {
 // Эмбеды ошибок
 const notomute = new Discord.RichEmbed()
 .setTitle("Ошибка")
@@ -137,7 +137,7 @@ const msgauthor = new Discord.RichEmbed()
 
 }
 
-if (command == "unmute" || command == "размут") {
+if (command == `${p}unmute` || command == `${p}размут`) {
 // Эмбеды ошибок
 const noperm = new Discord.RichEmbed()
 .setTitle("Ошибка")
