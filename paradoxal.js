@@ -59,7 +59,7 @@ client.on('message', async message => {
         const command = args.shift().toLowerCase();
 if (command == `${p}help` || command == `${p}помощь`) {
    const embed = new Discord.RichEmbed()
-   .addField("Модерация", "``.mute``, ``.unmute``")
+   .addField("Модерация", "``.textmute``, ``.voicemute``, ``.textunmute``, ``.voiceunmute``")
    .setColor(c)
    .setThumbnail("https://img.icons8.com/nolan/96/000000/help.png")
     setTimeout(message.channel.send(embed), 1500)
